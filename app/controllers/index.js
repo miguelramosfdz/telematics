@@ -361,7 +361,7 @@ function vehicleBehaviorTrack(e){
 			track[e.type].flag = true;
 			if(settings[e.type].notify){
 				if(Titanium.Platform.model != 'Simulator' && OS_IOS){
-					acs.pushNotify({payload:"Drive Track Alert for "+settings.driverName+"\n\n"+e.title+" exceeded limit of "+settingMax+settings[e.type].extension});
+					//acs.pushNotify({payload:"Drive Track Alert for "+settings.driverName+"\n\n"+e.title+" exceeded limit of "+settingMax+settings[e.type].extension});
 				} else {
 					appAlert("Exceeded limit of "+settingMax+settings[e.type].extension);
 				}
@@ -525,15 +525,12 @@ function startSimulation(){
 		simulate();
 		simulationInt = setInterval(simulate, 2000);
 	} else {
-		
 		simulate(true);
 		clearInterval(simulationInt);
 		simulationInt = null;
 		
 		$.simulateBtn.title = "Start Auto Simulation";
-		if(OS_IOS && Titanium.Platform.model == 'Simulator'){
-			$.connectBtn && $.connectBtn.show();
-		}
+		$.connectBtn && $.connectBtn.show();
 	}
 }
 
@@ -680,7 +677,7 @@ function showParent(){
 function windowFocus(evt){
 	showParent();
 	if(evt.source.id == "naviWin"){
-		if(!Titanium.Platform.canOpenURL('navicon://')){
+		if(!Titanium.Platform.canOpenURL('navicon://') && Titanium.Platform.model != 'Simulator'){
 			navi.installNavi(); 
 		}
 	}	
