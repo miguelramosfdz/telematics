@@ -1,4 +1,13 @@
 function Controller() {
+    function touch(e) {
+        if ("touchstart" == e.type) {
+            $.row.backgroundColor = "#901a1d";
+            $.title.color = "#fff";
+        } else {
+            $.row.backgroundColor = "transparent";
+            $.title.color = "#000";
+        }
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "row";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -6,11 +15,14 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
+    var __defers = {};
     $.__views.row = Ti.UI.createView({
         height: 50,
         id: "row"
     });
     $.__views.row && $.addTopLevelView($.__views.row);
+    touch ? $.__views.row.addEventListener("touchstart", touch) : __defers["$.__views.row!touchstart!touch"] = true;
+    touch ? $.__views.row.addEventListener("touchend", touch) : __defers["$.__views.row!touchend!touch"] = true;
     $.__views.content = Ti.UI.createView({
         touchEnabled: false,
         layout: "horizontal",
@@ -58,6 +70,8 @@ function Controller() {
     $.title.text = "Send " + args.title + " to Vehicle";
     $.image.image = args.image;
     $.row.applyProperties(args);
+    __defers["$.__views.row!touchstart!touch"] && $.__views.row.addEventListener("touchstart", touch);
+    __defers["$.__views.row!touchend!touch"] && $.__views.row.addEventListener("touchend", touch);
     _.extend($, exports);
 }
 
