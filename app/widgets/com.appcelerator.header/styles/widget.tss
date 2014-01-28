@@ -1,0 +1,32 @@
+".container" : {
+	height:60,
+	width:Ti.UI.FILL,
+	top:0,
+	backgroundImage:"/bg.png"
+}
+"#logo" : {
+	backgroundImage:"/appicon.png",
+	height:35,
+	width:35,
+	left:5,
+	bottom:5
+}
+"#banner" : {
+	bottom:0,
+	left:50,
+	height:40,
+	width:Ti.UI.FILL,
+	duration:10000
+}
+"#title" : {
+	bottom:0,
+	left:0,
+	height:40,
+	width:Ti.UI.FILL,
+	font:{fontWeight:"bold", fontSize:"18"},
+	paddingLeft:50,
+	paddingRight:50,
+	textAlignment:"center",
+	verticalAlign:Ti.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
+	color:"#fff"
+}

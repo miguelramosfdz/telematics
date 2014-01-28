@@ -1,0 +1,46 @@
+<Alloy>
+	<TabGroup navBarHidden="true">
+		<Tab title="Data" icon="dataIcon.png" navBarHidden="true">
+			<Window id="drivingWin" onFocus="windowFocus" navBarHidden="true">
+				<Widget src="com.appcelerator.header" id="drivingHeader"/>
+				<View id="drivingContent" class="container">
+					<Button id="connectBtn" onClick="vehicleConnect">Connect to Vehicle</Button>
+					<Button id="simulateBtn" onClick="startSimulation">Start Auto Simulation</Button>
+					<Label id="status"/>
+					<Label id="maxThrottle"/>
+					<Label id="maxSpeed"/>
+					<Label id="maxRpm"/>
+					<Label id="maxAcceleration"/>
+					<Label id="engineTemp"/>
+					<Label id="outsideTemp"/>
+					
+					<ScrollView id="logScroll">
+						<Label id="alertLabel"/>
+					</ScrollView>
+				</View>
+			</Window>
+		</Tab>
+		<Tab title="Settings" icon="settingsIcon.png" navBarHidden="true">
+			<Window id="settingsWin" class="container" onFocus="windowFocus" navBarHidden="true">
+				<Widget src="com.appcelerator.header" id="settingsHeader"/>
+				<ScrollView>
+					<Label>User Info</Label>
+					<TextField id="driverName" type="driverName" hintText="Driver Name" onChange="updateSettings" onBlur="updateCloud"/>
+					<TextField id="reportEmail" type="reportEmail" hintText="Report Email" onChange="updateSettings" onBlur="updateCloud" visible="false"/>
+					<Label id="reportLabel" visible="false">Reporting Limits</Label>
+					<TextField id="vehicleSpeedMax" type="vehicleSpeed" hintText="Speed Limit" onChange="updateSettings" onBlur="addExtension" visible="false"/>
+					<TextField id="throttlePositionMax" type="throttlePosition" hintText="Throttle Position" onChange="updateSettings" onBlur="addExtension" visible="false"/>
+					<TextField id="engineSpeedMax" type="engineSpeed" hintText="RPM Limit" onChange="updateSettings" onBlur="addExtension" visible="false"/>
+					<TextField id="accelerationXMax" type="accelerationX" hintText="G-Force Limit" onChange="updateSettings" onBlur="addExtension" visible="false"/>
+				</ScrollView>
+			</Window>
+		</Tab>
+		<Tab title="NaviBridge" icon="navIcon.png" navBarHidden="true">
+			<Window id="naviWin" class="container" onFocus="windowFocus" navBarHidden="true">
+				<Widget src="com.appcelerator.header" id="naviHeader"/>
+				<ScrollView id="locations" onClick="naviClick"/>
+					
+			</Window>
+		</Tab>
+</TabGroup>
+</Alloy>

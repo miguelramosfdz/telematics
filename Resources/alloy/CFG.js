@@ -1,0 +1,1 @@
+module.exports={"dependencies":{"com.appcelerator.header":"1.0"}};

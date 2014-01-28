@@ -1,0 +1,27 @@
+".container" : {
+	height:50
+}
+".row_data" : {
+	touchEnabled:false
+}
+"#content" : {
+	layout:"horizontal",
+	top:5,
+	bottom:5
+}
+"#title" : {
+	left:10,
+	color:"#000"
+}
+"#image" : {
+	left:10,
+	height:40,
+	width:40
+}
+"#divider" : {
+	height:1,
+	left:5,
+	right:5,
+	bottom:0,
+	backgroundColor:"#000"
+}
