@@ -1,1 +1,7 @@
 This is a simple app to demonstrate telematics on the Appcelerator platform.
+
+Currently built for iOS.
+
+Launch the DensoSimulator/simulator.jar application to produce live simulation data.
+
+NaviBridge Demo must be done on device.
