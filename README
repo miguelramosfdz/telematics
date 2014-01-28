@@ -1,7 +1,7 @@
-This is a simple app to demonstrate telematics on the Appcelerator platform.
+This is a simple app to demonstrate telematics & file encryption on the Appcelerator platform.
 
-Currently built for iOS.
+Currently built for iOS only due to module limitations.
 
-Launch the DensoSimulator/simulator.jar application to produce live simulation data.
+Launch /DensoSimulator/simulator.jar to produce live simulation data.
 
 NaviBridge Demo must be done on device.
