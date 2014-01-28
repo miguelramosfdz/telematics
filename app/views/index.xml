@@ -38,7 +38,7 @@
 		<Tab title="NaviBridge" icon="navIcon.png" navBarHidden="true">
 			<Window id="naviWin" class="container" onFocus="windowFocus" navBarHidden="true">
 				<Widget src="com.appcelerator.header" id="naviHeader"/>
-				<ScrollView id="locations" onClick="naviClick"/>
+				<ScrollView id="locations" onTouchend="naviClick"/>
 					
 			</Window>
 		</Tab>
